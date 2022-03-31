@@ -20,6 +20,9 @@ public struct VideosView: View {
 					),
 					content: VideoCell.init(store:))
 			}
+			.onAppear {
+				viewStore.send(.onAppear)
+			}
 		}
     }
 }

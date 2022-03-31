@@ -6,9 +6,10 @@ struct HomeView: View {
 	var body: some View {
 		NavigationView {
 			VideosView(store: VideosViewStore(
-				initialState: VideosState.preview,
+				initialState: VideosState(),
 				reducer: videosReducer,
-				environment: VideosEnvironment.preview))
+				environment: VideosEnvironment(apiService: ApiService())
+			))
 			.navigationTitle("GMBN")
 		}
 	}

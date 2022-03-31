@@ -7,12 +7,14 @@ public struct Video: Identifiable, Equatable {
 	public let id = UUID()
 	let name: String
 	let description: String
+	let date: Date
 	let duration: TimeInterval
 	let thumbnail: URL
 
-	public init(name: String, description: String, duration: TimeInterval, thumbnail: URL) {
+	public init(name: String, description: String, date: Date, duration: TimeInterval, thumbnail: URL) {
 		self.name = name
 		self.description = description
+		self.date = date
 		self.duration = duration
 		self.thumbnail = thumbnail
 	}
@@ -20,19 +22,26 @@ public struct Video: Identifiable, Equatable {
 
 public struct VideosState: Equatable {
 	var videos: IdentifiedArrayOf<Video>
+
+	public init(videos: IdentifiedArrayOf<Video> = IdentifiedArrayOf<Video>()) {
+		self.videos = videos
+	}
 }
 
 public enum VideosAction {
 	case onAppear
-	case videosResults(Result<[Video], Error>)
+	case videosResults(result: Result<[Video], Error>)
 	case videoCell(id: Video.ID, action: VideoCellAction)
 }
 
 public struct VideosEnvironment {
 	let apiService: VideosApiService
+	let mainQueue: AnySchedulerOf<DispatchQueue>
 
-	public init(apiService: VideosApiService) { // KISS dependency injection
+	public init(apiService: VideosApiService,
+				mainQueue: AnySchedulerOf<DispatchQueue> = .main) { // KISS dependency injection
 		self.apiService = apiService
+		self.mainQueue = mainQueue
 	}
 }
 
@@ -45,7 +54,20 @@ public let videosReducer = VideosReducer.combine(
 	VideosReducer { state, action, environment in
 		switch action {
 		case .onAppear:
-			return environment.apiService.requestVideos().
+			return environment.apiService.requestVideos()
+				.catchToEffect()
+				.map(VideosAction.videosResults)
+				.receive(on: environment.mainQueue)
+				.eraseToEffect()
+			return .none
+		case .videosResults(let result):
+			switch result {
+			case .success(let videos):
+				state.videos = IdentifiedArray(uniqueElements: videos)
+			case .failure(let error):
+				print(error)
+			}
+			return .none
 		case .videoCell:
 			// TODO
 			return .none

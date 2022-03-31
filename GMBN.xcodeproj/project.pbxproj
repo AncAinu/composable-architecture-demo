@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A991E79027F5D2DE0074F9C4 /* Videos in Frameworks */ = {isa = PBXBuildFile; productRef = A991E78F27F5D2DE0074F9C4 /* Videos */; };
+		A991E79227F5DEE70074F9C4 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A991E79127F5DEE70074F9C4 /* ApiService.swift */; };
 		A9F2550B27F5A622008065A2 /* GMBNApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2550A27F5A622008065A2 /* GMBNApp.swift */; };
 		A9F2550D27F5A622008065A2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2550C27F5A622008065A2 /* HomeView.swift */; };
 		A9F2550F27F5A625008065A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9F2550E27F5A625008065A2 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A991E79127F5DEE70074F9C4 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		A9F2550727F5A622008065A2 /* GMBN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMBN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F2550A27F5A622008065A2 /* GMBNApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMBNApp.swift; sourceTree = "<group>"; };
 		A9F2550C27F5A622008065A2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				A9F2553A27F5A8A0008065A2 /* Features */,
 				A9F2550A27F5A622008065A2 /* GMBNApp.swift */,
 				A9F2550C27F5A622008065A2 /* HomeView.swift */,
+				A991E79127F5DEE70074F9C4 /* ApiService.swift */,
 				A9F2550E27F5A625008065A2 /* Assets.xcassets */,
 				A9F2551027F5A625008065A2 /* Preview Content */,
 			);
@@ -292,6 +295,7 @@
 			files = (
 				A9F2550D27F5A622008065A2 /* HomeView.swift in Sources */,
 				A9F2550B27F5A622008065A2 /* GMBNApp.swift in Sources */,
+				A991E79227F5DEE70074F9C4 /* ApiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
