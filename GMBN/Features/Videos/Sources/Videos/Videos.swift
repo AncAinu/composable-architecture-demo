@@ -20,39 +20,19 @@ public struct Video: Identifiable, Equatable {
 
 public struct VideosState: Equatable {
 	var videos: IdentifiedArrayOf<Video>
-
-	public static var preview = Self(videos: [
-		Video(name: "Test 1",
-			  description: "Test 1 test 1",
-			  duration: 65,
-			  thumbnail: URL(string: "https://i.ytimg.com/vi/UtJjIeVyRk4/hqdefault.jpg")!),
-		Video(name: "Test 2",
-			  description: "Test 2 test 2",
-			  duration: 65,
-			  thumbnail: URL(string: "https://i.ytimg.com/vi/_8PPz5mo_Fg/hqdefault.jpg")!),
-		Video(name: "Test 3",
-			  description: "Test 3 test 3",
-			  duration: 65,
-			  thumbnail: URL(string: "https://i.ytimg.com/vi/iPuxdqopkqM/hqdefault.jpg")!)
-	])
 }
 
 public enum VideosAction {
 	case onAppear
+	case videosResults(Result<[Video], Error>)
 	case videoCell(id: Video.ID, action: VideoCellAction)
 }
 
 public struct VideosEnvironment {
-	private let apiService: VideosApiService
+	let apiService: VideosApiService
 
 	public init(apiService: VideosApiService) { // KISS dependency injection
 		self.apiService = apiService
-	}
-
-	public static var preview: Self {
-		let service = VideosApiServiceMock()
-		service._requestVideos = { .none }
-		return Self(apiService: service)
 	}
 }
 
@@ -65,8 +45,7 @@ public let videosReducer = VideosReducer.combine(
 	VideosReducer { state, action, environment in
 		switch action {
 		case .onAppear:
-			// TODO
-			return .none
+			return environment.apiService.requestVideos().
 		case .videoCell:
 			// TODO
 			return .none

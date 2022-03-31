@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A991E79027F5D2DE0074F9C4 /* Videos in Frameworks */ = {isa = PBXBuildFile; productRef = A991E78F27F5D2DE0074F9C4 /* Videos */; };
 		A9F2550B27F5A622008065A2 /* GMBNApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2550A27F5A622008065A2 /* GMBNApp.swift */; };
 		A9F2550D27F5A622008065A2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2550C27F5A622008065A2 /* HomeView.swift */; };
 		A9F2550F27F5A625008065A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9F2550E27F5A625008065A2 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A991E79027F5D2DE0074F9C4 /* Videos in Frameworks */,
 				A9F2553627F5A72A008065A2 /* ComposableArchitecture in Frameworks */,
 				A9F2553927F5A7CB008065A2 /* Alamofire in Frameworks */,
 			);
@@ -76,6 +78,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A991E78E27F5D2DE0074F9C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A9F254FE27F5A622008065A2 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +92,7 @@
 				A9F2551A27F5A625008065A2 /* GMBNTests */,
 				A9F2552427F5A625008065A2 /* GMBNUITests */,
 				A9F2550827F5A622008065A2 /* Products */,
+				A991E78E27F5D2DE0074F9C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +170,7 @@
 			packageProductDependencies = (
 				A9F2553527F5A72A008065A2 /* ComposableArchitecture */,
 				A9F2553827F5A7CB008065A2 /* Alamofire */,
+				A991E78F27F5D2DE0074F9C4 /* Videos */,
 			);
 			productName = GMBN;
 			productReference = A9F2550727F5A622008065A2 /* GMBN.app */;
@@ -620,6 +631,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A991E78F27F5D2DE0074F9C4 /* Videos */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Videos;
+		};
 		A9F2553527F5A72A008065A2 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A9F2553427F5A72A008065A2 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
