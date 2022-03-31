@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A9F2550B27F5A622008065A2 /* GMBNApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2550A27F5A622008065A2 /* GMBNApp.swift */; };
-		A9F2550D27F5A622008065A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2550C27F5A622008065A2 /* ContentView.swift */; };
+		A9F2550D27F5A622008065A2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2550C27F5A622008065A2 /* HomeView.swift */; };
 		A9F2550F27F5A625008065A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9F2550E27F5A625008065A2 /* Assets.xcassets */; };
 		A9F2551227F5A625008065A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9F2551127F5A625008065A2 /* Preview Assets.xcassets */; };
 		A9F2551C27F5A625008065A2 /* GMBNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2551B27F5A625008065A2 /* GMBNTests.swift */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		A9F2550727F5A622008065A2 /* GMBN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMBN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F2550A27F5A622008065A2 /* GMBNApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMBNApp.swift; sourceTree = "<group>"; };
-		A9F2550C27F5A622008065A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A9F2550C27F5A622008065A2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A9F2550E27F5A625008065A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9F2551127F5A625008065A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A9F2551727F5A625008065A2 /* GMBNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GMBNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				A9F2550A27F5A622008065A2 /* GMBNApp.swift */,
-				A9F2550C27F5A622008065A2 /* ContentView.swift */,
+				A9F2550C27F5A622008065A2 /* HomeView.swift */,
 				A9F2550E27F5A625008065A2 /* Assets.xcassets */,
 				A9F2551027F5A625008065A2 /* Preview Content */,
 			);
@@ -257,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9F2550D27F5A622008065A2 /* ContentView.swift in Sources */,
+				A9F2550D27F5A622008065A2 /* HomeView.swift in Sources */,
 				A9F2550B27F5A622008065A2 /* GMBNApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
