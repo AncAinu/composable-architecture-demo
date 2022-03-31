@@ -46,6 +46,7 @@
 		A9F2552127F5A625008065A2 /* GMBNUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GMBNUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F2552527F5A625008065A2 /* GMBNUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMBNUITests.swift; sourceTree = "<group>"; };
 		A9F2552727F5A625008065A2 /* GMBNUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMBNUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A9F2553B27F5A9C4008065A2 /* Videos */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Videos; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +99,7 @@
 		A9F2550927F5A622008065A2 /* GMBN */ = {
 			isa = PBXGroup;
 			children = (
+				A9F2553A27F5A8A0008065A2 /* Features */,
 				A9F2550A27F5A622008065A2 /* GMBNApp.swift */,
 				A9F2550C27F5A622008065A2 /* HomeView.swift */,
 				A9F2550E27F5A625008065A2 /* Assets.xcassets */,
@@ -129,6 +131,14 @@
 				A9F2552727F5A625008065A2 /* GMBNUITestsLaunchTests.swift */,
 			);
 			path = GMBNUITests;
+			sourceTree = "<group>";
+		};
+		A9F2553A27F5A8A0008065A2 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A9F2553B27F5A9C4008065A2 /* Videos */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
