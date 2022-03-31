@@ -10,18 +10,37 @@ let videoCellReducer = Reducer<Video, VideoCellAction, Void> { _, _, _ in
 }
 
 struct VideoCell: View {
+
 	let store: VideoCellStore
 
     var body: some View {
 		WithViewStore(store) { viewStore in
 			HStack {
+				AsyncImage(
+					url: viewStore.thumbnail,
+					content: { phase in
+						switch phase {
+						case .empty: Image(systemName: "hourglass")
+						case .success(let image):
+							image
+								.resizable()
+								.aspectRatio(contentMode: .fit)
+						case .failure:
+							Image(systemName: "icloud.slash.fill")
+						}
+					}
+				)
+				.frame(width: 100, height: 80)
+				.foregroundColor(.white)
+				.background(Color.gray)
+				.clipped()
 				Text(viewStore.name)
 				Spacer()
 				Text("\(viewStore.duration)")
 			}
-			.frame(height: 44)
+			.frame(height: 80)
 		}
-    }
+	}
 }
 
 struct VideoCell_Previews: PreviewProvider {
