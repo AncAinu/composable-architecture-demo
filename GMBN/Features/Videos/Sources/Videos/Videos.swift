@@ -19,7 +19,7 @@ public struct Video: Identifiable, Equatable {
 }
 
 public struct VideosState: Equatable {
-	var videos: [Video]
+	var videos: IdentifiedArrayOf<Video>
 
 	public static var preview = Self(videos: [
 		Video(name: "Test 1",
@@ -39,6 +39,7 @@ public struct VideosState: Equatable {
 
 public enum VideosAction {
 	case onAppear
+	case videoCell(id: Video.ID, action: VideoCellAction)
 }
 
 public struct VideosEnvironment {
@@ -56,10 +57,19 @@ public struct VideosEnvironment {
 }
 
 public typealias VideosReducer = Reducer<VideosState, VideosAction, VideosEnvironment>
-public let videosReducer = VideosReducer { state, action, environment in
-	switch action {
-	case .onAppear:
-		// TODO
-		return .none
+public let videosReducer = VideosReducer.combine(
+	videoCellReducer.forEach(
+		state: \.videos,
+		action: /VideosAction.videoCell(id:action:),
+		environment: { _ in () } ),
+	VideosReducer { state, action, environment in
+		switch action {
+		case .onAppear:
+			// TODO
+			return .none
+		case .videoCell:
+			// TODO
+			return .none
+		}
 	}
-}
+)

@@ -13,9 +13,12 @@ public struct VideosView: View {
     public var body: some View {
 		WithViewStore(store) { viewStore in
 			List {
-				ForEach(viewStore.videos) { video in
-					Text(video.name)
-				}
+				ForEachStore(
+					store.scope(
+						state: \.videos,
+						action: VideosAction.videoCell(id:action:)
+					),
+					content: VideoCell.init(store:))
 			}
 		}
     }
